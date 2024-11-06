@@ -1,2 +1,36 @@
 @import '_flex';
+@import '_grid';
 
+
+
+body{
+    background-color: #B7BCB8;
+    color:#3CFA9F;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Shadows Into Light", cursive;
+}
+.MaxWH{
+    width: 100%;
+    height: 100%;
+}
+.top{
+    min-height: 50px;
+}
+.backdrop{
+    display: block;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.3);
+    min-height: 90vh;
+    max-width: 70vw;
+    background-color: #22282C;
+    border-radius: 25px;
+}
+.shade{
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+}
+.remove{
+    display: none;
+}
