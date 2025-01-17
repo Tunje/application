@@ -1,5 +1,28 @@
 const gridElements = ['grid-item_1','grid-item_2','grid-item_3','grid-item_4','grid-item_5','grid-item_6','grid-item_7','grid-item_8','grid-item_9','grid-item_10','grid-item_11A','grid-item_12','grid-item_13','grid-item_14']
+console.log("script functioning");
 
+function ToggleChidrensClassRemover(element){
+    let children = element.children;
+    console.log("Number of children:", children.length)
+    for (let g = 0; g < children.length; g++)
+        {
+        if(!children[g].classList.contains("title"))
+            {
+            if(children[g].classList.contains("remove"))
+                {
+                 children[g].classList.remove("remove");
+                }
+            else
+                {
+                children[g].classList.add("remove");
+                }
+            }
+        }
+    }
+function nav(element)
+    {
+    
+    }
 
 
 function centralize(button)
@@ -15,7 +38,7 @@ function centralize(button)
             break;
             }
         }
-    if(k === false)
+    if(k === false)//// if their is no majoris
         {
         for(let i = 0; i < hide.length; i++)
             {
@@ -43,10 +66,11 @@ function centralize(button)
                 button.classList.remove(gridElements[i]);
                 button.classList.add("grid-item_majoris");
                 button.classList.add("centralized");
+                ToggleChidrensClassRemover(button);
                 }
             }
         }
-    else
+    else //// fi there is a majoris and its the button that you clicked
         {
         if(button.classList.contains("grid-item_majoris"))
             {
@@ -57,6 +81,7 @@ function centralize(button)
                     hide[j].classList.remove("grid-item_majoris");
                     hide[j].classList.remove("centralized");
                     hide[j].classList.add(gridElements[j]);
+                    ToggleChidrensClassRemover(hide[j]);
                     }
                 if (hide[j].classList.contains("remove")) 
                     {
@@ -69,7 +94,7 @@ function centralize(button)
                     }
                 }
             }
-        else
+        else ///// if there is a majoris and its not the button you click
             {
             for (let j = 0; j < hide.length; j++) 
                 {
@@ -82,6 +107,7 @@ function centralize(button)
                         {
                         hide[j].classList.add("remove");
                         }
+                     ToggleChidrensClassRemover(hide[j]);
                     }
                 }
             for(let i = 0; i < count; i++)
@@ -91,6 +117,7 @@ function centralize(button)
                     button.classList.remove(gridElements[i]);
                     button.classList.add("grid-item_majoris");
                     button.classList.add("centralized");
+                    ToggleChidrensClassRemover(button);
                     }
                 }
             }
